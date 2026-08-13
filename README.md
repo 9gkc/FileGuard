@@ -2,7 +2,34 @@
 
 > **Safe local file triage, without execution or automatic upload.**
 
+[![Release](https://img.shields.io/github/v/release/9gkc/FileGuard?display_name=tag&label=Windows%20release&color=2dd4bf)](https://github.com/9gkc/FileGuard/releases/latest)
+[![Quality](https://img.shields.io/github/actions/workflow/status/9gkc/FileGuard/quality.yml?branch=main&label=quality&color=2dd4bf)](https://github.com/9gkc/FileGuard/actions/workflows/quality.yml)
+[![License](https://img.shields.io/github/license/9gkc/FileGuard?color=2dd4bf)](LICENSE)
+[![Local processing](https://img.shields.io/badge/processing-local%20only-0f172a?logo=shield&logoColor=white)](docs/RESPONSIBLE_USE.md)
+
 FileGuard is a bilingual desktop tool that helps students, IT teams, and defenders review suspicious files without opening or running them. It identifies common file signatures, calculates SHA-256, inventories ZIP-compatible archives without extracting them, checks for filename deception, locates selected static indicators, and creates explainable reports in **Arabic** or **English**.
+
+## Download and explore
+
+| Option | Link |
+| :--- | :--- |
+| **Windows x64 installer** | [Download FileGuard v1.0.0](https://github.com/9gkc/FileGuard/releases/download/v1.0.0/FileGuard-1.0.0-win-x64.exe) |
+| **Latest release notes and verification hash** | [Open the release page](https://github.com/9gkc/FileGuard/releases/latest) |
+| **Safe operating boundaries** | [Read Responsible Use](docs/RESPONSIBLE_USE.md) |
+
+> Windows may display a SmartScreen warning because the first public release is not code-signed. Always download from this repository’s official release page and validate the published SHA-256 before installation.
+
+## Interface preview
+
+The screenshots below are taken from the running application, not generated mockups. They show the local-triage workspace before a user selects a file, which accurately represents FileGuard’s privacy-first behavior.
+
+### English interface
+
+![FileGuard English local file-triage workspace](docs/images/fileguard-en.webp)
+
+### واجهة عربية
+
+![واجهة FileGuard العربية للفرز المحلي للملفات](docs/images/fileguard-ar.webp)
 
 ## What FileGuard does
 

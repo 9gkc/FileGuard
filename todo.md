@@ -10,3 +10,6 @@
 - [x] Add professional documentation, responsible-use policy, privacy model, and contributor guidance.
 - [x] Add GitHub Actions quality checks and a Windows release workflow.
 - [x] Publish the verified repository, create the first release assets where supported, and update the 9gkc profile repository.
+- [x] Capture reproducible screenshots from the real FileGuard interface in English and Arabic.
+- [x] Add the verified screenshots, concise product positioning, and clear download links to the repository README.
+- [ ] Review the public GitHub presentation, publish the visual documentation update, and verify its rendering.
