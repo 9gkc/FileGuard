@@ -1,0 +1,52 @@
+{
+  "name": "fileguard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Safe local file triage for suspicious files — bilingual and offline-first.",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"pnpm:dev:web\" \"pnpm:dev:electron\"",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:electron": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "package:win": "pnpm build && electron-builder --win nsis portable"
+  },
+  "keywords": ["cybersecurity", "file-triage", "offline", "defensive-security", "incident-response"],
+  "author": "Ali Al-Karrar",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0",
+    "eslint": "^9.17.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "io.9gkc.fileguard",
+    "productName": "FileGuard",
+    "artifactName": "FileGuard-${version}-${os}-${arch}.${ext}",
+    "files": ["dist/**/*", "electron/**/*", "src/core/**/*", "package.json"],
+    "directories": { "buildResources": "build" },
+    "win": { "target": ["nsis", "portable"] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}

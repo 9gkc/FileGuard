@@ -1,0 +1,5 @@
+export type Locale = "en" | "ar";
+export type ReportFormat = "markdown" | "json" | "html";
+export interface Indicator { id: string; severity: "low" | "medium" | "high"; weight: number; title: string; description: string; evidence: string; }
+export interface AnalysisResult { schemaVersion: string; analyzedAt: string; fileName: string; filePath: string; extension: string | null; sizeBytes: number; sizeDisplay: string; sha256: string; actualType: string; indicators: Indicator[]; archive: { entryCount: number; entries: string[]; encryptedEntryCount: number; nestedExecutableCount: number; macroPresent: boolean } | null; risk: { score: number; level: "clean" | "low" | "medium" | "high" | "critical" }; privacy: { executed: boolean; uploaded: boolean; cloudReputationChecked: boolean }; }
+declare global { interface Window { fileguard: { pickFiles: () => Promise<string[]>; analyze: (filePaths: string[]) => Promise<AnalysisResult[]>; saveReport: (analysis: AnalysisResult, format: ReportFormat, locale: Locale) => Promise<{ saved: boolean; path?: string }>; showInFolder: (filePath: string) => Promise<void>; }; } }
