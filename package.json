@@ -13,7 +13,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "tsc --noEmit",
-    "package:win": "pnpm build && electron-builder --win nsis portable --publish never"
+    "package:win": "pnpm build && electron-builder --win nsis --publish never"
   },
   "keywords": ["cybersecurity", "file-triage", "offline", "defensive-security", "incident-response"],
   "author": "Ali Al-Karrar",
@@ -43,10 +43,10 @@
   "build": {
     "appId": "io.9gkc.fileguard",
     "productName": "FileGuard",
-    "artifactName": "FileGuard-${version}-${os}-${arch}-${target}.${ext}",
+    "artifactName": "FileGuard-${version}-${os}-${arch}.${ext}",
     "files": ["dist/**/*", "electron/**/*", "src/core/**/*", "package.json"],
     "directories": { "buildResources": "build" },
-    "win": { "target": ["nsis", "portable"] },
+    "win": { "target": ["nsis"] },
     "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
   }
 }
